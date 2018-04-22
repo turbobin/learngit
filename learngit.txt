@@ -90,10 +90,17 @@ id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告�
 
 然后，点“Add SSH Key”，填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容：
 
-16.提交到远程库命令：
+16.提交到远程库命令：（需要在GitHub上新建一个空目录，不包含README.md）
 git remote add origin https://github.com/turbobin/learngit.git
 git push -u origin master
 
 此后，只要本地作了提交，就可以通过命令：
 $ git push origin master
 把本地master分支的最新修改推送至GitHub，现在，你就拥有了真正的分布式版本库！
+
+17.克隆一个远程库到本地
+使用https协议：
+git clone https://github.com/turbobin/learning_git_from_liao
+
+使用ssh协议：
+git clone git@github.com/turbobin/learning_git_from_liao
