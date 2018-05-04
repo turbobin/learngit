@@ -92,7 +92,7 @@ id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告�
 
 16.提交到远程库命令：（需要在GitHub上新建一个空目录，不包含README.md）
 git remote add origin https://github.com/turbobin/learngit.git
-git push -u origin master
+git push -u origin master	(-u表示把本地master分支和远程关联起来)
 
 此后，只要本地作了提交，就可以通过命令：
 $ git push origin master
@@ -104,3 +104,28 @@ git clone https://github.com/turbobin/learning_git_from_liao
 
 使用ssh协议：
 git clone git@github.com/turbobin/learning_git_from_liao
+
+18.操作远程主机命令：
+git remote -v						——查看远程主机名与网址
+git remote show <主机名> 			——查看该主机的详细信息
+git remote add <主机名> <网址>		——添加远程库
+git remote rm <主机名>				——删除远程主机
+git remote rename <原主机名> <新主机名>	——重命名主机名
+
+19.将远程版本库的更新取回本地：
+git fetch origin master (这里指定master分支，也可以指定其他分支)
+
+20.查看远程分支：
+git branch -r
+git branch -a (查看所有分支)
+
+21，分支操作：
+查看分支：git branch
+创建分支：git branch <name>
+切换分支：git checkout <name>
+创建+切换分支：git checkout -b <name>
+合并某分支到当前分支：git merge <name>
+删除分支：git branch -d <name>
+
+22.出现冲突时 ，可以使用下面命令查看分支合并图：
+git log --graph
