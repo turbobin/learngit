@@ -125,7 +125,74 @@ git branch -a (查看所有分支)
 切换分支：git checkout <name>
 创建+切换分支：git checkout -b <name>
 合并某分支到当前分支：git merge <name>
+禁用fast-forward 模式合并分支，能看出历史合并：
+git merge --no-ff -m "merge with no-ff" dev
 删除分支：git branch -d <name>
 
 22.出现冲突时 ，可以使用下面命令查看分支合并图：
 git log --graph
+git log --graph --pretty=oneline --abbrev-commit
+
+23.解决bug分支：
+先保存工作现场：git stash
+创建bug分支修复bug，如从主分支上修复bug
+git checkout master
+git checkout -b bug-101
+之后修改-->提交-->切回master分支-->合并bug分支
+
+切回dev分支，
+查看保存的工作现场：
+git stash list
+恢复工作现场:
+git stash apply(stash内容不删除) --> git stash drop(删除stash)
+或者使用:git stash pop
+
+24,如果要丢弃一个没有被合并过的分支，
+可以通过git branch -D <name>强行删除
+
+25.从本地推送分支，使用git push origin branch-name，
+如果推送失败，先用git pull抓取远程的新提交；
+
+在本地创建和远程分支对应的分支，
+使用git checkout -b branch-name origin/branch-name，本地和远程分支的名称最好一致；
+
+建立本地分支和远程分支的关联，使用git branch --set-upstream branch-name origin/branch-name；
+
+从远程抓取分支，使用git pull，如果有冲突，要先处理冲突。
+
+git在pull或者合并分支的时候有时会遇到提示：Please enter a commit message...
+解决方式：
+①按键盘字母i 进入insert模式
+②修改信息
+③按键盘Esc键，输入":wq",回车即可
+
+26，给分支版本打标签：
+切换到需要打标签的分支，输入：
+git tag v1.0
+给历史版本打标签：
+使用git log --pretty=oneline --abbrev-commit 查看历史提交commit id
+再输入：git tag <标签> <commit id>
+
+带说明的标签：git tag -a v0.1 -m "version 0.1 released" 3628164
+查看标签：git show <标签名>
+
+# git tag -s <tagname> -m "blablabla..."可以用PGP签名标签
+
+27,
+命令git push origin <tagname>可以推送一个本地标签；
+
+命令git push origin --tags可以推送全部未推送过的本地标签；
+
+命令git tag -d <tagname>可以删除一个本地标签；
+
+命令git push origin :refs/tags/<tagname>可以删除一个远程标签。
+
+28,设置别名：
+$ git config --global alias.st status
+$ git config --global alias.co checkout
+$ git config --global alias.ci commit
+$ git config --global alias.br branch
+等等...
+
+配置文件：.git/config
+user/.gitconfig
