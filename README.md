@@ -1,9 +1,3 @@
-
-
-[Git 学习笔记](#Git 学习笔记)
-
-[在 Linux 上搭建 Git 服务器](#在 Linux 上搭建 Git 服务器)
-
 ## Git 学习笔记
 
 Git command：
