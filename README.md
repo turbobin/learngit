@@ -297,6 +297,8 @@ $ git config --global alias.br branch
 
 `user/.gitconfig`
 
+
+
 ## 在 Linux 上搭建 Git 服务器
 
 1.安装Linux系统（Windows下用虚拟机安装）
@@ -358,7 +360,3 @@ Git就会创建一个裸仓库，裸仓库没有工作区，因为服务器上�
 把类似 `git​:x:​501:501::/home/git:/bin/bash `内容改成
 
 `git​:x:​501:501::/home/git:/bin/git-shell`
-
-[wode]: 
-[www.baidu.com]: 
-[zhihu]: 
