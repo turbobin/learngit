@@ -1,4 +1,5 @@
-[TOC]
+- [Git 学习笔记](#Git 学习笔记)
+- [在 Linux 上搭建 Git 服务器](#在 Linux 上搭建 Git 服务器)
 
 ## Git 学习笔记
 
@@ -360,3 +361,7 @@ Git就会创建一个裸仓库，裸仓库没有工作区，因为服务器上�
 把类似 `git​:x:​501:501::/home/git:/bin/bash `内容改成
 
 `git​:x:​501:501::/home/git:/bin/git-shell`
+
+[wode]: 
+[www.baidu.com]: 
+[zhihu]: 
